@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --orbi-green: #3ECF8E;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #0D0D0D;
+  color: #EDEDED;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0D0D0D; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* Selection */
+::selection { background: rgba(62,207,142,0.25); color: #fff; }
+
+/* Glass card base */
+.glass {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Green shimmer button */
+.btn-shimmer {
+  background: linear-gradient(
+    90deg,
+    #3ECF8E 0%,
+    #6EDFA8 40%,
+    #3ECF8E 60%,
+    #29A86E 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Noise overlay utility */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Phone glow ring */
+.phone-glow {
+  box-shadow:
+    0 0 0 1px rgba(62,207,142,0.12),
+    0 40px 80px rgba(0,0,0,0.6),
+    0 0 120px rgba(62,207,142,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* Section fade in via Framer Motion  */
+.section-hidden { opacity: 0; transform: translateY(40px); }

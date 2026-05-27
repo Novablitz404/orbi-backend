@@ -1,0 +1,39 @@
+{
+  "name": "orbi-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:bundler": "node --env-file=.env --require ts-node/register --project tsconfig.api.json scripts/test-bundler-batch.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@stellar/stellar-sdk": "^15.1.0",
+    "@supabase/supabase-js": "^2.105.4",
+    "framer-motion": "^11.15.0",
+    "lucide-react": "^0.468.0",
+    "next": "^15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vercel/node": "^5.8.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}

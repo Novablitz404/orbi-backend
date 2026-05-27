@@ -1,0 +1,8 @@
+node_modules
+.env
+dist
+.vercel
+firebase-service-account.json
+
+.next
+*.tsbuildinfo

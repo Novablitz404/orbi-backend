@@ -1,0 +1,25 @@
+{
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@3.2.7"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/pay",
+      "destination": "/api/pay"
+    },
+    {
+      "source": "/.well-known/assetlinks.json",
+      "destination": "/api/assetlinks"
+    },
+    {
+      "source": "/api/integrity/nonce",
+      "destination": "/api/integrity?action=nonce"
+    },
+    {
+      "source": "/api/integrity/verify",
+      "destination": "/api/integrity?action=verify"
+    }
+  ]
+}
